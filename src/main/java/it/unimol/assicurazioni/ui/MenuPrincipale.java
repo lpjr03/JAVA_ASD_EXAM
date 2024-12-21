@@ -6,6 +6,8 @@ public class MenuPrincipale implements Schermata{
 
     private static MenuPrincipale menuPrincipale;
 
+    private Scanner input;
+
     public static MenuPrincipale getInstance()
     {
         if(menuPrincipale==null)
@@ -15,7 +17,7 @@ public class MenuPrincipale implements Schermata{
 
     @Override
     public void esegui() {
-        Scanner input = new Scanner(System.in);
+        input = new Scanner(System.in);
         boolean esci;
         int scelta;
         do {
@@ -57,19 +59,19 @@ public class MenuPrincipale implements Schermata{
 
     private void func1()
     {
-        MenuImmatricolazione menuImmatricolazione=new MenuImmatricolazione();
+        MenuImmatricolazione menuImmatricolazione=new MenuImmatricolazione(input);
         menuImmatricolazione.esegui();
     }
 
     private void func2()
     {
-        MenuRottamazione menuRottamazione=new MenuRottamazione();
+        MenuRottamazione menuRottamazione=new MenuRottamazione(input);
         menuRottamazione.esegui();
     }
 
     private void func3()
     {
-        MenuControlloTarga menuControlloTarga=new MenuControlloTarga();
+        MenuControlloTarga menuControlloTarga=new MenuControlloTarga(input);
         menuControlloTarga.esegui();
     }
 }
