@@ -1,5 +1,6 @@
 package it.unimol.assicurazioni.ui;
 
+import it.unimol.assicurazioni.app.TargaValidator;
 import it.unimol.assicurazioni.exceptions.WrongTargaException;
 import lombok.AllArgsConstructor;
 
@@ -14,14 +15,18 @@ public class MenuControlloTarga implements Schermata{
 
 
     @Override
-    public void esegui() throws WrongTargaException{
+    public void esegui(){
 
         String targa;
         System.out.print("Inserisci un targa: ");
         targa = input.nextLine();
-        if(!Pattern.matches("^[A-Z]{2}\\d{3}[A-Z]{2}$", targa))
-            throw new WrongTargaException("Targa errata!");
-
+        try
+        {
+            TargaValidator.isTargaItalianaValida(targa);
+        }catch (WrongTargaException e)
+        {
+            System.out.println(e.getMessage());
+        }
 
     }
 }

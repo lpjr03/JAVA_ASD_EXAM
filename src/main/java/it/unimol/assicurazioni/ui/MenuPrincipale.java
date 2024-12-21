@@ -1,6 +1,6 @@
 package it.unimol.assicurazioni.ui;
 
-import it.unimol.assicurazioni.exceptions.WrongTargaException;
+
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class MenuPrincipale implements Schermata{
     }
 
     @Override
-    public void esegui() throws WrongTargaException {
+    public void esegui() {
         input = new Scanner(System.in);
         boolean esci;
         int scelta;
@@ -32,7 +32,7 @@ public class MenuPrincipale implements Schermata{
 
     }
 
-    private boolean gestisciInput(int scelta) throws WrongTargaException
+    private boolean gestisciInput(int scelta)
     {
         switch (scelta)
         {
@@ -71,7 +71,7 @@ public class MenuPrincipale implements Schermata{
         menuRottamazione.esegui();
     }
 
-    private void func3() throws WrongTargaException
+    private void func3()
     {
         MenuControlloTarga menuControlloTarga=new MenuControlloTarga(input);
         menuControlloTarga.esegui();
