@@ -5,7 +5,6 @@ import it.unimol.assicurazioni.exceptions.WrongTargaException;
 import lombok.AllArgsConstructor;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 @AllArgsConstructor
 public class MenuRottamazione implements Schermata{

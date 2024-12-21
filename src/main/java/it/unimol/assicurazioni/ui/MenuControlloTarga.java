@@ -5,14 +5,11 @@ import it.unimol.assicurazioni.exceptions.WrongTargaException;
 import lombok.AllArgsConstructor;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 @AllArgsConstructor
 public class MenuControlloTarga implements Schermata{
 
     private Scanner input;
-
-
 
     @Override
     public void esegui(){

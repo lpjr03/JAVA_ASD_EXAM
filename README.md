@@ -1,6 +1,6 @@
 ## JAVA PROJECT FOR "AUTOMATED SOFTWARE DELIVERY" EXAM
 
-This application manages a car insurance company. 
+This application manages a car registrations company. 
 
 Build done with:
 - Maven

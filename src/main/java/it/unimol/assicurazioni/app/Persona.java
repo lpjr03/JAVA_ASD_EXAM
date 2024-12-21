@@ -10,4 +10,5 @@ public class Persona {
     private String nome;
     private String cognome;
     private LocalDate dataNascita;
+    private String codiceFiscale;
 }
