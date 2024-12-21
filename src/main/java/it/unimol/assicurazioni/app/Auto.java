@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 @Data
 @AllArgsConstructor
 public class Auto {
-
     private String nomeProduttore;
     private String modello;
     private String allestimento;
