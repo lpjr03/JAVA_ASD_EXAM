@@ -1,13 +1,12 @@
 package it.unimol.assicurazioni.app;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class GestoreAuto{
 
     private static GestoreAuto gestoreAuto;
 
-    private HashMap<String, List<Auto>> listaAuto;
+    private HashMap<String, Auto> listaAuto;
 
     private GestoreAuto() {
         listaAuto = new HashMap<>();
@@ -19,10 +18,5 @@ public class GestoreAuto{
             gestoreAuto = new GestoreAuto();
         return gestoreAuto;
     }
-
-
-
-
-
 
 }
