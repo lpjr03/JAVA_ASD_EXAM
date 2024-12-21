@@ -9,4 +9,7 @@ public class Auto {
     private String nomeProduttore;
     private String modello;
     private String allestimento;
+    private Persona proprietario;
+    private float cilindrata;
+    private int cavalli;
 }
