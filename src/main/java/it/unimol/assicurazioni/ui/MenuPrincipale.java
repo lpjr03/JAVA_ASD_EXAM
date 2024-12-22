@@ -2,6 +2,8 @@ package it.unimol.assicurazioni.ui;
 
 
 
+import it.unimol.assicurazioni.app.GestoreAuto;
+
 import java.util.Scanner;
 
 public class MenuPrincipale implements Schermata{
@@ -9,6 +11,8 @@ public class MenuPrincipale implements Schermata{
     private static MenuPrincipale menuPrincipale;
 
     private Scanner input;
+
+    private GestoreAuto gestoreAuto;
 
     public static MenuPrincipale getInstance()
     {
@@ -22,6 +26,7 @@ public class MenuPrincipale implements Schermata{
         input = new Scanner(System.in);
         boolean esci;
         int scelta;
+        gestoreAuto=GestoreAuto.getInstance();
         do {
             this.stampaMenu();
             System.out.print("Scelta: ");
@@ -61,19 +66,19 @@ public class MenuPrincipale implements Schermata{
 
     private void func1()
     {
-        MenuImmatricolazione menuImmatricolazione=new MenuImmatricolazione(input);
+        MenuImmatricolazione menuImmatricolazione=new MenuImmatricolazione(input, gestoreAuto);
         menuImmatricolazione.esegui();
     }
 
     private void func2()
     {
-        MenuRottamazione menuRottamazione=new MenuRottamazione(input);
+        MenuRottamazione menuRottamazione=new MenuRottamazione(input, gestoreAuto);
         menuRottamazione.esegui();
     }
 
     private void func3()
     {
-        MenuControlloTarga menuControlloTarga=new MenuControlloTarga(input);
+        MenuControlloTarga menuControlloTarga=new MenuControlloTarga(input,gestoreAuto);
         menuControlloTarga.esegui();
     }
 }

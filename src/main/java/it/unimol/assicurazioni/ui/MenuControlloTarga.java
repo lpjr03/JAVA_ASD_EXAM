@@ -1,5 +1,6 @@
 package it.unimol.assicurazioni.ui;
 
+import it.unimol.assicurazioni.app.GestoreAuto;
 import it.unimol.assicurazioni.app.TargaValidator;
 import it.unimol.assicurazioni.exceptions.WrongTargaException;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,8 @@ public class MenuControlloTarga implements Schermata{
 
     private Scanner input;
 
+    private GestoreAuto gestoreAuto;
+
     @Override
     public void esegui(){
 
@@ -19,7 +22,9 @@ public class MenuControlloTarga implements Schermata{
         targa = input.nextLine();
         try
         {
-            TargaValidator.isTargaItalianaValida(targa);
+            if(TargaValidator.isTargaItalianaValida(targa))
+                this.gestoreAuto.controllaTarga(targa);
+
         }catch (WrongTargaException e)
         {
             System.out.println(e.getMessage());

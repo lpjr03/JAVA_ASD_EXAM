@@ -2,6 +2,7 @@ package it.unimol.assicurazioni.ui;
 
 import it.unimol.assicurazioni.app.Auto;
 import it.unimol.assicurazioni.app.CodiceFiscaleValidator;
+import it.unimol.assicurazioni.app.GestoreAuto;
 import it.unimol.assicurazioni.app.Persona;
 import it.unimol.assicurazioni.exceptions.WrongCodiceFiscaleException;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,8 @@ import java.util.Scanner;
 public class MenuImmatricolazione implements Schermata{
 
     private Scanner input;
+
+    private GestoreAuto gestoreAuto;
 
     @Override
     public void esegui() {
@@ -43,9 +46,10 @@ public class MenuImmatricolazione implements Schermata{
         nome = input.nextLine();
         System.out.print("Inserisci il cognome del proprietario: ");
         cognome = input.nextLine();
-        System.out.print("Inserisci la data nascita del proprietario (formato dd-mm-yyyy): ");
+        System.out.print("Inserisci la data nascita del proprietario (formato dd/mm/yyyy): ");
         try {
             dataNascita = LocalDate.parse(input.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            System.out.print("Inserisci il codice fiscale del proprietario: ");
             codiceFiscale=input.nextLine();
             CodiceFiscaleValidator.isCodiceFiscaleValido(codiceFiscale);
             proprietario=new Persona(nome, cognome, dataNascita,codiceFiscale);
