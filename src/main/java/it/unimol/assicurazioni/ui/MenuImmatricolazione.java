@@ -53,14 +53,14 @@ public class MenuImmatricolazione implements Schermata{
             codiceFiscale=input.nextLine();
             CodiceFiscaleValidator.isCodiceFiscaleValido(codiceFiscale);
             proprietario=new Persona(nome, cognome, dataNascita,codiceFiscale);
+            Auto auto=new Auto(nomeProduttore,modello,allestimento,proprietario,cilindrata,cavalli);
+            if(gestoreAuto.immatricolaAuto(auto))
+                System.out.println("Auto immatricolata!");
+            else
+                System.out.println("Auto non immatricolata!");
         } catch (DateTimeParseException | WrongCodiceFiscaleException e) {
             System.out.println(e.getMessage());
-            return;
         }
-
-        Auto auto=new Auto(nomeProduttore,modello,allestimento,proprietario,cilindrata,cavalli);
-
-
 
     }
 }

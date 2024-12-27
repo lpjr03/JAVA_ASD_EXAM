@@ -3,6 +3,7 @@ package it.unimol.assicurazioni.app;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class GestoreAuto{
 
@@ -64,6 +65,34 @@ public class GestoreAuto{
             System.out.println("L'automobile associata alla targa inserita è stata rottamata");
         else
             System.out.println("La targa non è stata ancora assegnata");
+    }
+
+    public boolean immatricolaAuto(Auto auto)
+    {
+        String targa=GestoreAuto.generaTarga();
+        if(esisteAuto(targa))
+            return false;
+        this.listaAuto.put(targa, auto);
+        System.out.println(targa);
+        return true;
+    }
+
+    private static String generaTarga() {
+        Random random = new Random();
+
+        // Genera i primi due caratteri alfabetici
+        char primaLettera = (char) ('A' + random.nextInt(26));
+        char secondaLettera = (char) ('A' + random.nextInt(26));
+
+        // Genera i tre numeri centrali
+        int numeri = random.nextInt(1000); // Numero da 0 a 999
+
+        // Genera gli ultimi due caratteri alfabetici
+        char terzaLettera = (char) ('A' + random.nextInt(26));
+        char quartaLettera = (char) ('A' + random.nextInt(26));
+
+        // Costruisci la targa
+        return String.format("%c%c%03d%c%c", primaLettera, secondaLettera, numeri, terzaLettera, quartaLettera);
     }
 
 
