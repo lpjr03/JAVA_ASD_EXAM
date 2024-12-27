@@ -4,6 +4,7 @@ package it.unimol.assicurazioni.ui;
 
 import it.unimol.assicurazioni.app.GestoreAuto;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuPrincipale implements Schermata{
@@ -26,6 +27,12 @@ public class MenuPrincipale implements Schermata{
         input = new Scanner(System.in);
         boolean esci;
         int scelta;
+        try {
+            GestoreAuto.initialize();
+        } catch (IOException e) {
+            System.err.println("Non è stato possibile leggere il file. Eliminare il file.");
+            System.exit(-1);
+        }
         gestoreAuto=GestoreAuto.getInstance();
         do {
             this.stampaMenu();
@@ -33,8 +40,6 @@ public class MenuPrincipale implements Schermata{
             scelta=Integer.parseInt(input.nextLine());
             esci=this.gestisciInput(scelta);
         }while(!esci);
-
-
     }
 
     private boolean gestisciInput(int scelta)

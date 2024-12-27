@@ -7,6 +7,7 @@ import it.unimol.assicurazioni.app.Persona;
 import it.unimol.assicurazioni.exceptions.WrongCodiceFiscaleException;
 import lombok.AllArgsConstructor;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -60,6 +61,8 @@ public class MenuImmatricolazione implements Schermata{
                 System.out.println("Auto non immatricolata!");
         } catch (DateTimeParseException | WrongCodiceFiscaleException e) {
             System.out.println(e.getMessage());
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }
