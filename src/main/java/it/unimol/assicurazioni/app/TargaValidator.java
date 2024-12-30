@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class TargaValidator {
     public static boolean isTargaItalianaValida(String targa) throws WrongTargaException {
         // Espressione regolare per il formato delle targhe italiane
-        String pattern = "^[A-Z]{2}\\d{3}[A-Z]{2}$";
+        String pattern = "^[A-HJ-NP-Z]{2}\\\\d{3}[A-HJ-NP-Z]{2}$";
          if(!Pattern.matches(pattern, targa))
              throw new WrongTargaException("Targa non valida");
          return true;
