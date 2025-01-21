@@ -42,7 +42,7 @@ class GestoreAutoTest {
         GestoreAuto gestoreAuto=GestoreAuto.getInstance();
         assertTrue(gestoreAuto.immatricolaAuto(auto), "L'auto dovrebbe essere immatricolata con successo.");
         String targa = GestoreAuto.getInstance().listaAuto.keySet().iterator().next();
-        assertTrue(() -> GestoreAuto.getInstance().controllaTarga(targa), "La targa dovrebbe essere riconosciuta.");
+        assertTrue(GestoreAuto.getInstance().controllaTarga(targa), "La targa dovrebbe essere riconosciuta.");
     }
 
     @Test
