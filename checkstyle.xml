@@ -4,7 +4,15 @@
 
 <module name="Checker">
     <module name="TreeWalker">
-        <module name="ConstantName"/>
-        <module name="EmptyBlock"/>
+        <module name="AnnotationLocation"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="UnusedImports"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="AvoidNestedBlocks"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="AvoidStarImport"/>
     </module>
 </module>

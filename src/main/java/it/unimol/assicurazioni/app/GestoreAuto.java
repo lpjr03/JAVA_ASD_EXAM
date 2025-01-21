@@ -23,7 +23,7 @@ public class GestoreAuto implements Serializable {
         return gestoreAuto;
     }
 
-    public static void initialize() throws IOException{
+    public static void initialize() throws IOException {
         GestoreAuto.gestoreAuto = GestoreAuto.load();
     }
 
