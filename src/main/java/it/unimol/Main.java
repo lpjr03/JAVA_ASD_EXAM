@@ -1,5 +1,4 @@
 package it.unimol;
-
 import it.unimol.assicurazioni.ui.MenuPrincipale;
 
 public class Main {

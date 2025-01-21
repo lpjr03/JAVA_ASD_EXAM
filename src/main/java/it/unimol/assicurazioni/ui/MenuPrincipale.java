@@ -1,9 +1,5 @@
 package it.unimol.assicurazioni.ui;
-
-
-
 import it.unimol.assicurazioni.app.GestoreAuto;
-
 import java.io.IOException;
 import java.util.Scanner;
 

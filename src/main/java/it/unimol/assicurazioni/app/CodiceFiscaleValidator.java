@@ -1,7 +1,5 @@
 package it.unimol.assicurazioni.app;
-
 import it.unimol.assicurazioni.exceptions.WrongCodiceFiscaleException;
-
 import java.util.regex.Pattern;
 
 public class CodiceFiscaleValidator {

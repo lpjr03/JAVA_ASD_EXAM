@@ -1,12 +1,10 @@
 package it.unimol.assicurazioni.ui;
-
 import it.unimol.assicurazioni.app.Auto;
 import it.unimol.assicurazioni.app.CodiceFiscaleValidator;
 import it.unimol.assicurazioni.app.GestoreAuto;
 import it.unimol.assicurazioni.app.Persona;
 import it.unimol.assicurazioni.exceptions.WrongCodiceFiscaleException;
 import lombok.AllArgsConstructor;
-
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

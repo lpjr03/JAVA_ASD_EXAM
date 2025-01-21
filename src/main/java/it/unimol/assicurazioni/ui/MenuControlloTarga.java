@@ -1,10 +1,8 @@
 package it.unimol.assicurazioni.ui;
-
 import it.unimol.assicurazioni.app.GestoreAuto;
 import it.unimol.assicurazioni.app.TargaValidator;
 import it.unimol.assicurazioni.exceptions.WrongTargaException;
 import lombok.AllArgsConstructor;
-
 import java.util.Scanner;
 
 @AllArgsConstructor

@@ -1,5 +1,4 @@
 package it.unimol.assicurazioni.app;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;

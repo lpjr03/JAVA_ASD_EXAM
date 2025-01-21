@@ -1,7 +1,5 @@
 package it.unimol.assicurazioni.app;
-
 import it.unimol.assicurazioni.exceptions.WrongTargaException;
-
 import java.util.regex.Pattern;
 
 public class TargaValidator {
