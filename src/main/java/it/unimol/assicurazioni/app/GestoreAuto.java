@@ -45,17 +45,17 @@ public class GestoreAuto implements Serializable {
         return false;
     }
 
-    public boolean aggiungiAutoRottamata(String targa){
-        if(esisteAuto(targa)) {
+    public boolean aggiungiAutoRottamata(String targa) {
+        if (esisteAuto(targa)) {
             if (!isAutoRottamata(targa)) {
                 this.autoRottamate.add(targa);
                 System.out.println("Targa rottamata aggiunta!");
                 return true;
             } else
                 System.out.println("Targa già rottamata!");
-        }
-        else
+        } else {
             System.out.println("Targa inesistente!");
+        }
         this.save();
         return false;
     }

@@ -54,6 +54,8 @@ public class MenuPrincipale implements Schermata{
                 break;
             case 0:
                 return true;
+            default:
+                return false;
         }
         return false;
     }

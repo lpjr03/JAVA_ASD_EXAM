@@ -46,4 +46,23 @@
     <module name="LineLength">
         <property name="max" value="120"/>
     </module>
+    <module name="TreeWalker">
+        <module name="MissingSwitchDefault"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="OneStatementPerLine"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="RightCurly"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="SimplifyBooleanExpression"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="UnnecessaryParentheses"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="UnusedLocalVariable">
+        </module>
+    </module>
 </module>
