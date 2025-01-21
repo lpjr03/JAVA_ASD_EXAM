@@ -10,7 +10,7 @@ public class GestoreAuto implements Serializable {
 
     private static GestoreAuto gestoreAuto;
 
-    private HashMap<String, Auto> listaAuto;
+    HashMap<String, Auto> listaAuto;
 
     private List<String> autoRottamate;
 
@@ -44,32 +44,34 @@ public class GestoreAuto implements Serializable {
         return false;
     }
 
-    public void aggiungiAutoRottamata(String targa)
+    public boolean aggiungiAutoRottamata(String targa)
     {
         if(esisteAuto(targa)) {
             if (!isAutoRottamata(targa)) {
                 this.autoRottamate.add(targa);
                 System.out.println("Targa rottamata aggiunta!");
+                return true;
             } else
                 System.out.println("Targa già rottamata!");
         }
         else
             System.out.println("Targa inesistente!");
-
         this.save();
+        return false;
     }
 
-    public void controllaTarga(String targa)
+    public boolean controllaTarga(String targa)
     {
         if(esisteAuto(targa))
         {
             System.out.println(this.listaAuto.get(targa).toString());
-            return;
+            return true;
         }
         if(isAutoRottamata(targa))
             System.out.println("L'automobile associata alla targa inserita è stata rottamata");
         else
             System.out.println("La targa non è stata ancora assegnata");
+        return false;
     }
 
     public boolean immatricolaAuto(Auto auto) throws FileNotFoundException {
