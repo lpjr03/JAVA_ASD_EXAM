@@ -20,13 +20,11 @@ public class MenuControlloTarga implements Schermata{
         String targa;
         System.out.print("Inserisci un targa: ");
         targa = input.nextLine();
-        try
-        {
+        try{
             if(TargaValidator.isTargaItalianaValida(targa))
                 this.gestoreAuto.controllaTarga(targa);
 
-        }catch (WrongTargaException e)
-        {
+        }catch (WrongTargaException e){
             System.out.println(e.getMessage());
         }
 

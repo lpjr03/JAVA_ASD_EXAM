@@ -1,11 +1,8 @@
 package it.unimol.assicurazioni.app;
-
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -19,12 +19,10 @@ public class MenuRottamazione implements Schermata{
         String targa;
         System.out.print("Inserisci un targa: ");
         targa = input.nextLine();
-        try
-        {
+        try{
             TargaValidator.isTargaItalianaValida(targa);
             this.gestoreAuto.aggiungiAutoRottamata(targa);
-        }catch (WrongTargaException e)
-        {
+        }catch (WrongTargaException e){
             System.out.println(e.getMessage());
         }
 

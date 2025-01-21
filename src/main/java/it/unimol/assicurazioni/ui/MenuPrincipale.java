@@ -15,8 +15,7 @@ public class MenuPrincipale implements Schermata{
 
     private GestoreAuto gestoreAuto;
 
-    public static MenuPrincipale getInstance()
-    {
+    public static MenuPrincipale getInstance(){
         if(menuPrincipale==null)
             menuPrincipale=new MenuPrincipale();
         return menuPrincipale;
@@ -42,10 +41,8 @@ public class MenuPrincipale implements Schermata{
         }while(!esci);
     }
 
-    private boolean gestisciInput(int scelta)
-    {
-        switch (scelta)
-        {
+    private boolean gestisciInput(int scelta){
+        switch (scelta){
             case 1:
                 this.func1();
                 break;
@@ -61,28 +58,24 @@ public class MenuPrincipale implements Schermata{
         return false;
     }
 
-    private void stampaMenu()
-    {
+    private void stampaMenu(){
         System.out.println("1. Immatricola automobile");
         System.out.println("2. Rottama automobile");
         System.out.println("3. Controlla targa");
         System.out.println("0. Esci");
     }
 
-    private void func1()
-    {
+    private void func1(){
         MenuImmatricolazione menuImmatricolazione=new MenuImmatricolazione(input, gestoreAuto);
         menuImmatricolazione.esegui();
     }
 
-    private void func2()
-    {
+    private void func2(){
         MenuRottamazione menuRottamazione=new MenuRottamazione(input, gestoreAuto);
         menuRottamazione.esegui();
     }
 
-    private void func3()
-    {
+    private void func3(){
         MenuControlloTarga menuControlloTarga=new MenuControlloTarga(input,gestoreAuto);
         menuControlloTarga.esegui();
     }

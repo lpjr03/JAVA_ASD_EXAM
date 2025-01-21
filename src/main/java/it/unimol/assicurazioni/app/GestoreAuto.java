@@ -33,25 +33,19 @@ public class GestoreAuto implements Serializable {
         GestoreAuto.gestoreAuto = GestoreAuto.load();
     }
 
-
-
-    private boolean esisteAuto(String targa)
-    {
+    private boolean esisteAuto(String targa){
         return this.listaAuto.entrySet().stream().anyMatch(listaAuto -> listaAuto.getKey().equals(targa));
     }
 
-    private boolean isAutoRottamata(String targa)
-    {
-        for(String _targa : autoRottamate)
-        {
+    private boolean isAutoRottamata(String targa){
+        for(String _targa : autoRottamate){
             if(_targa.equals(targa))
                 return true;
         }
         return false;
     }
 
-    public boolean aggiungiAutoRottamata(String targa)
-    {
+    public boolean aggiungiAutoRottamata(String targa){
         if(esisteAuto(targa)) {
             if (!isAutoRottamata(targa)) {
                 this.autoRottamate.add(targa);
@@ -66,10 +60,8 @@ public class GestoreAuto implements Serializable {
         return false;
     }
 
-    public boolean controllaTarga(String targa)
-    {
-        if(esisteAuto(targa))
-        {
+    public boolean controllaTarga(String targa){
+        if(esisteAuto(targa)){
             System.out.println(this.listaAuto.get(targa).toString());
             return true;
         }
@@ -119,8 +111,7 @@ public class GestoreAuto implements Serializable {
         }
     }
 
-    private static GestoreAuto load()
-    {
+    private static GestoreAuto load(){
         try(
                 FileInputStream fileInputStream = new FileInputStream("gestore.sr");
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
@@ -133,7 +124,5 @@ public class GestoreAuto implements Serializable {
             throw new RuntimeException(e);
         }
     }
-
-
 
 }
