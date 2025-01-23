@@ -1,5 +1,9 @@
 name: "CodeQL Advanced"
 
+permissions:
+  actions: write
+  security-events: write
+
 on:
   push:
     branches: [ "main" ]
@@ -30,4 +34,6 @@ jobs:
       uses: github/codeql-action/autobuild@v2
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
