@@ -6,3 +6,4 @@ Build done with:
 - Maven
 - Checkstyle
 - Lombok
+- SpotBugs
