@@ -23,19 +23,16 @@ This Java-based application is designed to manage cars, their owners, and vehicl
 
 ## Deployment with Docker
 
-Steps to deploy the application:
 - Navigate to the project directory:
-- Build the docker image with the following command:
-    
+
+Build the docker image with the following command:
 
     docker build -t car-management-system .
 
-- Run the Docker container with the following command:
-
+Run the Docker container with the following command:
 
     docker run -it car-management-system
 
-Alternatively, you can launch the container with Docker Compose to simplify container management:
+Alternatively, you can use start the container with the following command:
 
     docker-compose up
-
