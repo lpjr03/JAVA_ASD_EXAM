@@ -23,8 +23,6 @@ This Java-based application is designed to manage cars, their owners, and vehicl
 
 ## Deployment with Docker
 
-The project has been deployed using Docker, with a custom Dockerfile and a docker-compose.yml file.
-
 Steps to deploy the application:
 - Navigate to the project directory:
 - Build the docker image with the following command:
