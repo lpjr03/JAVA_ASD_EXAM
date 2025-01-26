@@ -123,7 +123,6 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <?m2e execute onConfiguration,onIncremental?>
                         <id>validate</id>
                         <phase>validate</phase>
                         <goals>
@@ -139,7 +138,6 @@
                 <version>3.20.0</version>
                 <executions>
                     <execution>
-                        <?m2e execute onConfiguration,onIncremental?>
                         <id>validate</id>
                         <phase>validate</phase>
                         <goals>
@@ -160,7 +158,6 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <?m2e execute onConfiguration,onIncremental?>
                         <id>validate</id>
                         <phase>validate</phase>
                         <goals>
