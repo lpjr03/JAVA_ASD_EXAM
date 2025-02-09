@@ -30,7 +30,3 @@ Firstly, **clone this repository and then navigate to the project directory**.
 **Run the Docker container** with the following command:
 
     docker run -it car-management-system
-
-Alternatively, you can use start the container with the following command:
-
-    docker-compose up
