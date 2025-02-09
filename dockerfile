@@ -1,12 +1,13 @@
 FROM ubuntu:latest
 
-RUN apt-get update
-RUN apt-get install -y maven
-RUN apt-get install -y git
+RUN apt-get update && apt-get install -y \
+    openjdk-17-jdk \
+    maven \
+    git && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get clean \
-    && rm -rf /var/lib/apt/lists/
-
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH="$JAVA_HOME/bin:$PATH"
 
 RUN git clone https://github.com/lpjr03/JAVA_ASD_EXAM
 
