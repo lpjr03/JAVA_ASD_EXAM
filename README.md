@@ -30,3 +30,5 @@ Firstly, **clone this repository and then navigate to the project directory**.
 **Run the Docker container** with the following command:
 
     docker run -it car-management-system
+
+Alternatively, **go to the "Releases" menu and follow the instructions.**
