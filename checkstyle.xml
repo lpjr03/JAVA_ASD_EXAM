@@ -5,64 +5,29 @@
 <module name="Checker">
     <module name="TreeWalker">
         <module name="AnnotationLocation"/>
-    </module>
-    <module name="TreeWalker">
         <module name="UnusedImports"/>
-    </module>
-    <module name="TreeWalker">
         <module name="AvoidNestedBlocks"/>
-    </module>
-    <module name="TreeWalker">
         <module name="AvoidStarImport"/>
-    </module>
-    <module name="TreeWalker">
         <module name="AvoidStaticImport"/>
-    </module>
-    <module name="TreeWalker">
         <module name="ConstantName">
             <property name="applyToPublic" value="true"/>
             <property name="applyToProtected" value="true"/>
             <property name="applyToPrivate" value="true"/>
         </module>
-    </module>
-    <module name="TreeWalker">
         <module name="DefaultComesLast"/>
-    </module>
-    <module name="TreeWalker">
         <module name="EmptyBlock"/>
-    </module>
-    <module name="TreeWalker">
         <module name="EmptyCatchBlock"/>
-    </module>
-    <module name="TreeWalker">
         <module name="EmptyStatement"/>
-    </module>
-    <module name="TreeWalker">
         <module name="EqualsHashCode"/>
-    </module>
-    <module name="TreeWalker">
         <module name="LeftCurly"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="OneStatementPerLine"/>
+        <module name="RightCurly"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="UnnecessaryParentheses"/>
+        <module name="UnusedLocalVariable"/>
     </module>
     <module name="LineLength">
         <property name="max" value="120"/>
-    </module>
-    <module name="TreeWalker">
-        <module name="MissingSwitchDefault"/>
-    </module>
-    <module name="TreeWalker">
-        <module name="OneStatementPerLine"/>
-    </module>
-    <module name="TreeWalker">
-        <module name="RightCurly"/>
-    </module>
-    <module name="TreeWalker">
-        <module name="SimplifyBooleanExpression"/>
-    </module>
-    <module name="TreeWalker">
-        <module name="UnnecessaryParentheses"/>
-    </module>
-    <module name="TreeWalker">
-        <module name="UnusedLocalVariable">
-        </module>
     </module>
 </module>

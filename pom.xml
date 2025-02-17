@@ -35,7 +35,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
@@ -60,7 +59,6 @@
                     <excludes>
                         <exclude>it/unimol/Main.class</exclude>
                         <exclude>it/unimol/assicurazioni/ui/**</exclude>
-                        <exclude>it/unimol/assicurazioni/exceptions/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -188,9 +186,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-
-
 
         </plugins>
     </build>
