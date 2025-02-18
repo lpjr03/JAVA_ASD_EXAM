@@ -43,6 +43,12 @@ class GestoreAutoTest {
         assertTrue(gestoreAuto.immatricolaAuto(auto), "L'auto dovrebbe essere immatricolata con successo.");
         String targa = GestoreAuto.getInstance().listaAuto.keySet().iterator().next();
         assertTrue(GestoreAuto.getInstance().controllaTarga(targa), "La targa dovrebbe essere riconosciuta.");
+        Auto auto2 = new Auto("Jeep", "Renegade", "Suv", null, 1.8f,150);
+        gestoreAuto.immatricolaAuto(auto2);
+        String targa2 = GestoreAuto.getInstance().listaAuto.keySet().iterator().next();
+        gestoreAuto.aggiungiAutoRottamata(targa2);
+        assertFalse(gestoreAuto.controllaTarga(targa2),"L'auto dovrebbe essere rottamata. ");
+        assertFalse(gestoreAuto.controllaTarga("CX879DX"),"L'auto non è stata ancora assegnata. ");
     }
 
     @Test
@@ -52,5 +58,7 @@ class GestoreAutoTest {
         assertTrue(gestoreAuto.immatricolaAuto(auto), "L'auto dovrebbe essere immatricolata con successo.");
         String targa = GestoreAuto.getInstance().listaAuto.keySet().iterator().next();
         assertTrue(gestoreAuto.aggiungiAutoRottamata(targa), "L'auto dovrebbe essere rottamata con successo.");
+        assertFalse(gestoreAuto.aggiungiAutoRottamata(targa), "L'auto è già rottamata");
+        assertFalse(gestoreAuto.aggiungiAutoRottamata("CD135LM"));
     }
 }

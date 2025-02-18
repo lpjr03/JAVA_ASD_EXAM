@@ -114,17 +114,21 @@ public class GestoreAuto implements Serializable {
      * @param targa La targa da controllare.
      * @return true se la targa è valida, false altrimenti.
      */
-    public boolean controllaTarga(String targa){
-        if(esisteAuto(targa)){
+    public boolean controllaTarga(String targa) {
+        if (isAutoRottamata(targa)) {
+            System.out.println("L'automobile associata alla targa inserita è stata rottamata");
+            return false;
+        } else {
+            System.out.println("La targa non è stata ancora assegnata");
+        }
+
+        if (esisteAuto(targa)) {
             System.out.println(this.listaAuto.get(targa).toString());
             return true;
         }
-        if(isAutoRottamata(targa))
-            System.out.println("L'automobile associata alla targa inserita è stata rottamata");
-        else
-            System.out.println("La targa non è stata ancora assegnata");
         return false;
     }
+
 
     /**
      * Immatricola una nuova auto generando una targa casuale e aggiungendo l'auto alla lista.

@@ -59,6 +59,7 @@
                     <excludes>
                         <exclude>it/unimol/Main.class</exclude>
                         <exclude>it/unimol/assicurazioni/ui/**</exclude>
+                        <exclude>it/unimol/assicurazioni/exceptions/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -87,7 +88,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.72</minimum>
+                                            <minimum>0.90</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
