@@ -9,9 +9,10 @@ class CodiceFiscaleValidatorTest {
     @Test
     public void testCodiceFiscaleValido()
     {
+        CodiceFiscaleValidator validator = new CodiceFiscaleValidator();
         try {
-            assertTrue(CodiceFiscaleValidator.isCodiceFiscaleValido("GLLGTA01M54C933N"));
-            assertTrue(CodiceFiscaleValidator.isCodiceFiscaleValido("PLMLLE03P16B519G"));
+            assertTrue(validator.isCodiceFiscaleValido("GLLGTA01M54C933N"));
+            assertTrue(validator.isCodiceFiscaleValido("PLMLLE03P16B519G"));
         } catch (WrongCodiceFiscaleException e) {
             fail(e.getMessage());
         }
@@ -20,7 +21,8 @@ class CodiceFiscaleValidatorTest {
     @Test
     public void testCodiceFiscaleNonValido()
     {
-        assertThrows(WrongCodiceFiscaleException.class, ()-> CodiceFiscaleValidator.isCodiceFiscaleValido("GLLGTA01M54C933n"));
-        assertThrows(WrongCodiceFiscaleException.class, ()-> CodiceFiscaleValidator.isCodiceFiscaleValido("GLLGTA01M54C933"));
+        CodiceFiscaleValidator validator = new CodiceFiscaleValidator();
+        assertThrows(WrongCodiceFiscaleException.class, ()-> validator.isCodiceFiscaleValido("GLLGTA01M54C933n"));
+        assertThrows(WrongCodiceFiscaleException.class, ()-> validator.isCodiceFiscaleValido("GLLGTA01M54C933"));
     }
 }

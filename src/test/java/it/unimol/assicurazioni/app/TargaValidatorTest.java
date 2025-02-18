@@ -8,12 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class TargaValidatorTest {
     @Test
     public void testTargaValida() {
+        TargaValidator targaValidator = new TargaValidator();
         try {
-            assertTrue(TargaValidator.isTargaItalianaValida("AA000AA"));
-            assertTrue(TargaValidator.isTargaItalianaValida("AB123CD"));
-            assertTrue(TargaValidator.isTargaItalianaValida("AZ987ZY"));
-            assertTrue(TargaValidator.isTargaItalianaValida("ZA987BC"));
-            assertTrue(TargaValidator.isTargaItalianaValida("ZZ999ZZ"));
+            assertTrue(targaValidator.isTargaItalianaValida("AA000AA"));
+            assertTrue(targaValidator.isTargaItalianaValida("AB123CD"));
+            assertTrue(targaValidator.isTargaItalianaValida("AZ987ZY"));
+            assertTrue(targaValidator.isTargaItalianaValida("ZA987BC"));
+            assertTrue(targaValidator.isTargaItalianaValida("ZZ999ZZ"));
         } catch (WrongTargaException e) {
             fail(e.getMessage());
         }
@@ -21,10 +22,11 @@ class TargaValidatorTest {
 
     @Test
     public void testTargaNonValida() {
-        assertThrows(WrongTargaException.class, () -> TargaValidator.isTargaItalianaValida(""));
-        assertThrows(WrongTargaException.class, () -> TargaValidator.isTargaItalianaValida("IO123D"));
-        assertThrows(WrongTargaException.class, () -> TargaValidator.isTargaItalianaValida("AB123C"));
-        assertThrows(WrongTargaException.class, () -> TargaValidator.isTargaItalianaValida("ZZ9ZZ"));
+        TargaValidator targaValidator = new TargaValidator();
+        assertThrows(WrongTargaException.class, () -> targaValidator.isTargaItalianaValida(""));
+        assertThrows(WrongTargaException.class, () -> targaValidator.isTargaItalianaValida("IO123D"));
+        assertThrows(WrongTargaException.class, () -> targaValidator.isTargaItalianaValida("AB123C"));
+        assertThrows(WrongTargaException.class, () -> targaValidator.isTargaItalianaValida("ZZ9ZZ"));
     }
 
 
