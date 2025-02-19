@@ -18,6 +18,7 @@ This Java-based application is designed to manage cars, their owners, and vehicl
 ## Development Tools
 - **Lombok**: A Java library that automatically generates boilerplate code, such as getters, setters, equals, hashCode, and toString methods, reducing the need for repetitive code. 
 - **Javadoc**: A tool that generates API documentation directly from the source code, making it easier for developers to understand how to use the application and its components.
+- **Maven Site Plugin**: A Maven plugin used to generate a static site containing project documentation and reports. It can aggregate information such as Javadoc, dependency details, test reports, and static analysis results.
 
 ## Deployment with Docker
 
