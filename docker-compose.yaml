@@ -1,5 +1,6 @@
 version: '3.8'
-
+volumes:
+  car_data:
 services:
   car-management-system:
     build: .
@@ -7,3 +8,5 @@ services:
     container_name: car-management-system
     stdin_open: true
     tty: true
+    volumes:
+      - car_data:/app/data

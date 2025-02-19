@@ -175,7 +175,7 @@ public class GestoreAuto implements Serializable {
      */
     private void save(){
         try(
-                FileOutputStream fileOutputStream = new FileOutputStream("gestore.sr");
+                FileOutputStream fileOutputStream = new FileOutputStream("/app/data/gestore.sr");
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         ){
             objectOutputStream.writeObject(this);
@@ -192,7 +192,7 @@ public class GestoreAuto implements Serializable {
      */
     private static GestoreAuto load(){
         try(
-                FileInputStream fileInputStream = new FileInputStream("gestore.sr");
+                FileInputStream fileInputStream = new FileInputStream("/app/data/gestore.sr");
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         ){
             Object o = objectInputStream.readObject();
