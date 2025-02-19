@@ -98,13 +98,13 @@ public class GestoreAuto implements Serializable {
             if (!isAutoRottamata(targa)) {
                 this.autoRottamate.add(targa);
                 System.out.println("Targa rottamata aggiunta!");
+                this.save();
                 return true;
             } else
                 System.out.println("Targa già rottamata!");
         } else {
             System.out.println("Targa inesistente!");
         }
-        this.save();
         return false;
     }
 
