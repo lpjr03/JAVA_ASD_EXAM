@@ -16,7 +16,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run test case with Maven
-      run: mvn -B clean test
+      run: mvn clean test
 
   build:
     runs-on: ubuntu-latest
@@ -29,4 +29,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean package
