@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  car-management-system:
+    build: .
+    image: car-management-system
+    container_name: car-management-system
+    stdin_open: true
+    tty: true
