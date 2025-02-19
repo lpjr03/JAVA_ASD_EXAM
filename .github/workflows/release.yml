@@ -48,7 +48,7 @@ jobs:
 
             ### Run the container:
             ```bash
-            docker run -it ghcr.io/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
+            docker run -it --rm -v car_data:/app/data ghcr.io/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
             ```
           draft: false
           prerelease: false
