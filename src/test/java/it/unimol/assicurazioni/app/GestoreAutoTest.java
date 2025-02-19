@@ -16,7 +16,7 @@ class GestoreAutoTest {
 
     @AfterEach
     void tearDown() {
-        File file = new File("gestore.sr");
+        File file = new File("/app/data/gestore.sr");
         if (file.exists()) {
             file.delete();
         }

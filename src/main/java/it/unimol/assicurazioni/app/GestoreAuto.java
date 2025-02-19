@@ -1,11 +1,12 @@
 package it.unimol.assicurazioni.app;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.Serializable;
+import java.io.IOException;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
-import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -173,11 +174,18 @@ public class GestoreAuto implements Serializable {
     /**
      * Salva lo stato corrente del gestore auto in un file di serializzazione.
      */
-    private void save(){
-        try(
-                FileOutputStream fileOutputStream = new FileOutputStream("/app/data/gestore.sr");
-                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        ){
+    private void save() {
+        File file = new File("/app/data/gestore.sr");
+        File directory = file.getParentFile();
+
+        if (directory != null && !directory.exists()) {
+            directory.mkdirs();
+        }
+
+        try (
+                FileOutputStream fileOutputStream = new FileOutputStream(file);
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)
+        ) {
             objectOutputStream.writeObject(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -190,11 +198,18 @@ public class GestoreAuto implements Serializable {
      *
      * @return L'istanza di GestoreAuto caricata dal file.
      */
-    private static GestoreAuto load(){
-        try(
-                FileInputStream fileInputStream = new FileInputStream("/app/data/gestore.sr");
-                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        ){
+    private static GestoreAuto load() {
+        File file = new File("/app/data/gestore.sr");
+        File directory = file.getParentFile();
+
+        if (directory != null && !directory.exists()) {
+            directory.mkdirs();
+        }
+
+        try (
+                FileInputStream fileInputStream = new FileInputStream(file);
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)
+        ) {
             Object o = objectInputStream.readObject();
             return (GestoreAuto) o;
         } catch (FileNotFoundException e) {
