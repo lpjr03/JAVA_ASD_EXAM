@@ -62,6 +62,7 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
+          RELEASE_URL="https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}"
           curl -H "Content-Type: application/json" \
             -X POST \
             -d '{
@@ -69,7 +70,7 @@ jobs:
               "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
               "embeds": [{
                 "title": "Nuova Release Pubblicata!",
-                "description": "**${{ github.repository }}** ha rilasciato [${{ github.ref_name }}](${{ github.event.release.html_url }})",
+                "description": "**${{ github.repository }}** ha rilasciato [${{ github.ref_name }}]('"$RELEASE_URL"')",
                 "color": 3066993,
                 "fields": [
                   {
