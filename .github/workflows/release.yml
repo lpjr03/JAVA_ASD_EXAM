@@ -68,7 +68,7 @@ jobs:
               "username": "GitHub Actions",
               "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
               "embeds": [{
-                "title": "🚀 Nuova Release Pubblicata!",
+                "title": "Nuova Release Pubblicata!",
                 "description": "**${{ github.repository }}** ha rilasciato [${{ github.ref_name }}](${{ github.event.head_commit.url }})",
                 "color": 3066993,
                 "fields": [
