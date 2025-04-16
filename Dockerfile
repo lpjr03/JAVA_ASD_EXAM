@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apk update && apk add --no-cache git
 RUN git clone https://github.com/lpjr03/JAVA_ASD_EXAM.git progetto && cd progetto && mvn clean install
 
-FROM openjdk:17-jdk-slim
+FROM amazoncorretto:17-alpine
 
 WORKDIR /app
 
