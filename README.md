@@ -23,3 +23,13 @@ This Java-based application is designed to manage cars, their owners, and vehicl
 ## Deployment with Docker
 
 In order to launch the application, you must be running Docker first, then **go to the "Releases" menu and follow the instructions.**
+
+You can also launch the project using Docker Compose with interactive input:
+   ```bash
+   docker compose run car-management-system
+   ```
+Or, manually building and running the image:
+```bash
+   docker build -t car-management-system .
+   docker run -it car-management-system
+```
